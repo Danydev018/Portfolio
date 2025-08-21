@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
@@ -7,16 +7,20 @@ const ContactForm = () => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<null | { ok: boolean; msg: string }>(null);
+  // Honeypot & timing
+  const [website, setWebsite] = useState("");
+  const startedAtRef = useRef<number>(Date.now());
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus(null);
     setLoading(true);
     try {
+      const elapsedMs = Date.now() - startedAtRef.current;
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
+        body: JSON.stringify({ name, email, message, website, elapsedMs }),
       });
       const data = await res.json();
       if (!res.ok || !data?.ok) {
@@ -26,6 +30,8 @@ const ContactForm = () => {
       setName("");
       setEmail("");
       setMessage("");
+      setWebsite("");
+      startedAtRef.current = Date.now();
     } catch (err: any) {
       setStatus({ ok: false, msg: err?.message || "Error inesperado" });
     } finally {
@@ -43,6 +49,7 @@ const ContactForm = () => {
           placeholder="Tu nombre"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          maxLength={100}
         />
       </div>
       <div>
@@ -54,6 +61,7 @@ const ContactForm = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
+          autoComplete="email"
         />
       </div>
       <div>
@@ -64,6 +72,18 @@ const ContactForm = () => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           required
+          maxLength={3000}
+        />
+      </div>
+      {/* Honeypot field (should stay empty). Hidden from users, bots may fill it. */}
+      <div className="hidden" aria-hidden>
+        <label>Website</label>
+        <input
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
         />
       </div>
       <button

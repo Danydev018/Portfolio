@@ -1,16 +1,55 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { z } from "zod";
+import { contactLimiter, getClientIp } from "@/utils/rate-limit";
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message } = await req.json();
+    const json = await req.json();
 
-    if (!email || !message) {
+    // Basic rate limiting per IP
+    const ip = getClientIp(req);
+    if (!contactLimiter.take(ip)) {
       return NextResponse.json(
-        { ok: false, error: "Faltan campos requeridos (email, message)" },
+        { ok: false, error: "Demasiadas solicitudes. Intenta de nuevo más tarde." },
+        { status: 429 }
+      );
+    }
+
+    // Validation with Zod
+    const schema = z.object({
+      name: z.string().trim().max(100).optional().or(z.literal("")),
+      email: z.string().trim().email(),
+      message: z.string().trim().min(10).max(3000),
+      // Honeypot must be empty
+      website: z.string().optional().default("").refine((v) => !v, {
+        message: "Honeypot detectado",
+      }),
+      // Client-calculated fill time in ms
+      elapsedMs: z.number().int().nonnegative().optional(),
+    });
+
+    const { name, email, message, website, elapsedMs } = schema.parse(json);
+
+    // Minimum time to fill form to deter bots (e.g., >= 3s)
+    if (typeof elapsedMs === "number" && elapsedMs < 3000) {
+      return NextResponse.json(
+        { ok: false, error: "Formulario enviado demasiado rápido." },
         { status: 400 }
       );
     }
+
+    // Simple sanitization (escape HTML)
+    const escapeHtml = (s: string) =>
+      s
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    const sName = name ? escapeHtml(name) : "";
+    const sEmail = escapeHtml(email);
+    const sMessage = escapeHtml(message);
 
     // Resend configuration
     const apiKey = process.env.RESEND_API_KEY;
@@ -33,16 +72,16 @@ export async function POST(req: Request) {
     const { data: sent, error } = await resend.emails.send({
       from,
       to,
-      replyTo: email,
-      subject: `Nuevo mensaje desde el portafolio - ${name || "Sin nombre"} <${email}>`,
-      text: `Nombre: ${name || "(no provisto)"}\nEmail: ${email}\n\nMensaje:\n${message}`,
+      replyTo: sEmail,
+      subject: `Nuevo mensaje desde el portafolio - ${sName || "Sin nombre"} <${sEmail}>`,
+      text: `Nombre: ${sName || "(no provisto)"}\nEmail: ${sEmail}\n\nMensaje:\n${sMessage}`,
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6;">
           <h2>Nuevo mensaje desde el portafolio</h2>
-          <p><strong>Nombre:</strong> ${name || "(no provisto)"}</p>
-          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Nombre:</strong> ${sName || "(no provisto)"}</p>
+          <p><strong>Email:</strong> ${sEmail}</p>
           <p><strong>Mensaje:</strong></p>
-          <p>${(message || "").replace(/\n/g, "<br/>")}</p>
+          <p>${(sMessage || "").replace(/\n/g, "<br/>")}</p>
         </div>
       `,
     });
