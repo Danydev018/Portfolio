@@ -1,30 +1,20 @@
-import { BookText, CodeSquare, HomeIcon, UserRound, Linkedin, Twitter, Rss, Twitch, Youtube, Crop, Pencil, Computer, Book, Rocket, Speech } from "lucide-react";
+import { BookText, CodeSquare, HomeIcon, UserRound, Linkedin, Twitter, Rss, Twitch, Youtube, Crop, Pencil, Computer, Book, Rocket, Speech, Mail, Github } from "lucide-react";
 
 export const socialNetworks = [
     {
         id: 1,
         logo: <Youtube size={30} strokeWidth={1} />,
-        src: "#!",
+        src: "https://www.youtube.com/@Flexcode_Live",
     },
     {
         id: 2,
         logo: <Linkedin size={30} strokeWidth={1} />,
-        src: "#!",
+        src: "https://www.linkedin.com/in/tairon-rojas-dev007",
     },
     {
         id: 3,
-        logo: <Twitter size={30} strokeWidth={1} />,
-        src: "#!",
-    },
-    {
-        id: 4,
-        logo: <Rss size={30} strokeWidth={1} />,
-        src: "#!",
-    },
-    {
-        id: 5,
-        logo: <Twitch size={30} strokeWidth={1} />,
-        src: "#!",
+        logo: <Github size={30} strokeWidth={1} />,
+        src: "https://github.com/Danydev018",
     },
 ];
 
@@ -43,12 +33,6 @@ export const itemsNavbar = [
         link: "/about-me",
     },
     {
-        id: 3,
-        title: "Book",
-        icon: <BookText size={25} color="#fff" strokeWidth={1} />,
-        link: "/services",
-    },
-    {
         id: 4,
         title: "Target",
         icon: <CodeSquare size={25} color="#fff" strokeWidth={1} />,
@@ -65,149 +49,96 @@ export const itemsNavbar = [
 export const dataAboutPage = [
     {
         id: 1,
-        title: "Frontend Developer",
-        subtitle: "TechSolutions",
-        description: "Colabora con un equipo dinámico para desarrollar interfaces de usuario atractivas y funcionales que impulsen el éxito de nuestros clientes en el mundo digital.",
-        date: "Nov 2023 ",
+        title: "Full Stack Developer",
+        subtitle: "Sistema de Optimizacion de Rutas",
+        description: `Desarrollo de un sistema de gestión y optimización de rutas de entrega utilizando Neo4j como base de datos de grafos.
+                      Implementación de APIs REST para análisis de rutas, gestión de zonas y centros de distribución.`,
+        date: "Ago 2025 ",
     },
     {
         id: 2,
-        title: "Creador de Experiencias Digitales",
-        subtitle: "PixelCrafters",
-        description: "Trabaja en proyectos emocionantes que desafían los límites de la creatividad y la tecnología. Únete a nosotros mientras creamos experiencias digitales cautivadoras que inspiran y cautivan a nuestros usuarios.",
-        date: "May 2021",
+        title: "",
+        subtitle: "Business Assistant Bot",
+        description: `Bot multiplataforma para gestionar bandejas de entrada de PyMEs, reduciendo
+                      cuellos de botella en atención al cliente. Integración con APIs de mensajería y diseño de interfaz intuitiva. Modelo de negocio definido y estrategia de lanzamiento inicial.`,
+        date: "May 2025",
     },
     {
         id: 3,
-        title: "Especialista en Desarrollo Frontend",
-        subtitle: "CodeForge Solutions",
-        description: "Como desarrollador frontend, tendrás la oportunidad de colaborar en proyectos diversos y desafiantes que te permitirán expandir tus habilidades y dejar tu huella en el mundo digital.",
-        date: "Ago 2019",
+        title: "",
+        subtitle: "Sistema de Recomendacion de Musica",
+        description: `Desarrollado con Python y Flask, aplicando algoritmos de búsqueda y análisis de datos. Usa Cassandra-DB para almacenamiento de datos y Jinja2 para renderizado de plantillas.`,
+        date: "Mar 2025",
     },
     {
         id: 4,
-        title: "Prácticas Grado",
-        subtitle: "WebWizards Inc.",
-        description: "Únete a nosotros mientras creamos sitios web y aplicaciones interactivas que sorprenden y deleitan a nuestros clientes. Si tienes pasión por el diseño y la programación, y disfrutas colaborar en un entorno creativo, ¡queremos conocerte!        ",
-        date: "Mar 2018",
+        title: "Frontend Developer",
+        subtitle: "Medical App",
+        description: "Desarrollado en React con Next.js, TailwindCSS y Nest.js para el backend. Implementación de autenticación, Administracion de inventario y citas. Usa Postgre SQL como base de datos desplegada en supabase.",
+        date: "Dic 2024",
     },
 ]
 
 export const dataCounter = [
     {
         id: 0,
-        endCounter: 10,
+        endCounter: 4,
         text: "Años de experiencia",
         lineRight: true,
         lineRightMobile: true,
     },
     {
         id: 1,
-        endCounter: 80,
+        endCounter: 30,
         text: "Clientes satisfechos",
         lineRight: true,
         lineRightMobile: false,
     },
     {
         id: 2,
-        endCounter: 220,
+        endCounter: 35,
         text: "Proyectos finalizados",
         lineRight: true,
         lineRightMobile: true,
     },
     {
         id: 3,
-        endCounter: 30,
+        endCounter: 10,
         text: "Premios ganadores",
         lineRight: false,
         lineRightMobile: false,
     },
 ];
 
-export const serviceData = [
-    {
-        icon: <Crop />,
-        title: "Branding",
-        description: "Desarrollo de una identidad de marca sólida y coherente, incluyendo diseño de logotipo, colores y elementos visuales",
-    },
-    {
-        icon: <Pencil />,
-        title: "Diseño web",
-        description: "Diseño creativo y profesional de interfaces web intuitivas y atractivas, centradas en la experiencia del usuario",
-    },
-    {
-        icon: <Computer />,
-        title: "Desarrollo web",
-        description: "Diseño y desarrollo de sitios web a medida, adaptados a tus necesidades",
-    },
-    {
-        icon: <Book />,
-        title: "Copywriting",
-        description: "Creación de contenido persuasivo y atractivo que capta la atención de tu audiencia",
-    },
-    {
-        icon: <Rocket />,
-        title: "SEO",
-        description: "Optimización de tu presencia en línea mediante estrategias de SEO avanzadas, ",
-    },
-];
 
 export const dataPortfolio = [
     {
         id: 1,
-        title: "Web Pro",
-        image: "/image-1.jpg",
-        urlGithub: "#!",
-        urlDemo: "#!",
+        title: "Neo4J - Delivery",
+        image: "/neo4j.jpg",
+        urlGithub: "https://github.com/Danydev018/neo4j-delivery",
+        
     },
     {
         id: 2,
-        title: "Desarrollo Web Ágil",
-        image: "/image-2.jpg",
-        urlGithub: "#!",
-        urlDemo: "#!",
+        title: "Business Assistant Bot",
+        image: "/bab1.jpg",
+        urlGithub: "https://github.com/Danydev018/Bussines_Assistant_Bot",
+        
     },
     {
         id: 3,
-        title: "Estrategias Web",
-        image: "/image-3.jpg",
-        urlGithub: "#!",
-        urlDemo: "#!",
+        title: "Music Recommender",
+        image: "/ritmo-puro.jpg",
+        urlGithub: "https://github.com/Danydev018/BDII_Prueba",
+        
     },
     {
         id: 4,
-        title: "Ideas Creativas",
-        image: "/image-4.jpg",
-        urlGithub: "#!",
-        urlDemo: "#!",
-    },
-    {
-        id: 5,
-        title: "Webs Impactantes",
-        image: "/image-5.jpg",
-        urlGithub: "#!",
-        urlDemo: "#!",
-    },
-    {
-        id: 6,
-        title: "Web Dinámica",
-        image: "/image-6.jpg",
-        urlGithub: "#!",
-        urlDemo: "#!",
-    },
-    {
-        id: 7,
-        title: "Dark Web ",
-        image: "/image-7.jpg",
-        urlGithub: "#!",
-        urlDemo: "#!",
-    },
-    {
-        id: 8,
-        title: "E-commerce web",
-        image: "/image-8.jpg",
-        urlGithub: "#!",
-        urlDemo: "#!",
+        title: "Build IT",
+        image: "/build-it2.jpg",
+        urlGithub: "https://github.com/Danydev018/House_Estructure_Generator",
+        
     }
 ];
 

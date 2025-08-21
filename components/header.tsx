@@ -9,9 +9,9 @@ const Header = () => {
                 <div className="container justify-between max-w-6-xl mx-auto md:flex ">
                     <Link href="/">
                         <h1 className="my-3 text-4xl font-bold text-center md:text-left">
-                            Dani
+                            Tairon
                             <span className="text-secondary">
-                                Dev
+                                Rojas
                             </span>
                         </h1>
                     </Link>

@@ -26,12 +26,13 @@ const Introduction = () => {
                         className="block font-bold text-secondary"/>
                     </h1>
                     <p className="mx-auto mb-2 text-xl md:mx-0 md:mb-8">
-                        Como desarrollador Frontend y diseñador de UI/UX, me dedico a crear experiencias
-                        digitales atractivas y funcionales cuyo objetivo es complacer tus necesidades. 
+                    Experiencia en desarrollo
+                    Backend y Fullstack. He trabajado en proyectos propios de IA generativa, bots inteligentes y plataformas web
+                    que integran autenticación, análisis de datos y servicios en la nube. 
                     </p>
                     <div className="flex item-center justify-center gap-3 md:justify-start md:gap-10">
                         <Link 
-                        href="/projects" 
+                        href="/portfolio" 
                         className="px-3 py-2 transition-all border-2 cursor-pointer 
                         text-md w-fit rounded-xl hover:shadow-xl hover:shadow-white/50">
                             Ver proyectos
