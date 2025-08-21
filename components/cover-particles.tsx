@@ -28,20 +28,15 @@ const CoverParticles = () => {
 
     return ( 
         init &&
-        <div className="w-[0px]"> <Particles
+        <div className="fixed inset-0 -z-10 pointer-events-none"> <Particles
             id="tsparticles"
             options={{
                 fpsLimit: 120,
                 interactivity: {
                     events: {
-                        onClick: {
-                            enable: true,
-                            mode: "push",
-                        },
-                        onHover: {
-                            enable: true,
-                            mode: "repulse",
-                        },
+                        // Disable interactions to avoid accidental blocks on mobile
+                        onClick: { enable: false, mode: "push" },
+                        onHover: { enable: false, mode: "repulse" },
                     },
                     modes: {
                         push: {

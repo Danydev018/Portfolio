@@ -8,9 +8,9 @@ const Navbar = () => {
     const router = usePathname()
     return ( 
         <MotionTransition position="right" className="fixed z-40 flex 
-        flex-col items-center justify-center w-full mt-auto h-max bottom-10 ">
+        flex-col items-center justify-center w-full mt-auto h-max bottom-6 md:bottom-10 pb-[env(safe-area-inset-bottom)]">
             <nav>
-                <div className="flex items-center justify-center gap-2 px-4 py-1 rounded-full bg-white/15 background-blur-sm">
+                <div className="flex items-center justify-center gap-2 px-4 py-1 rounded-full bg-white/15 backdrop-blur-sm">
                     {itemsNavbar.map((item)=>{
                         return (
                             <div key={item.id}

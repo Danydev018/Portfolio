@@ -5,11 +5,12 @@ import { TypeAnimation } from "react-type-animation";
 
 const Introduction = () => {
     return ( 
-        <div className="z-20v w-full bg-darkBg/60">
-            <div className="z-20 grid items-center h-full p-6 py-20 md:py-8 md:grid-cols-2">
-                <Image src="/home-4.png" priority width="600" height="600" alt="profile-picture"/> 
+        <div className="z-20 w-full bg-darkBg/60">
+            <div className="z-20 grid items-center h-full p-4 md:p-6 py-16 md:py-8 md:grid-cols-2 gap-6">
+                <Image src="/home-4.png" priority width={600} height={600} alt="profile-picture"
+                    className="order-2 md:order-1 w-56 h-56 md:w-[480px] md:h-[480px] mx-auto object-contain"/> 
 
-                <div className="flex flex-col justify-center max-w-md">
+                <div className="order-1 md:order-2 flex flex-col justify-center max-w-md mx-auto md:mx-0 px-1">
                     <h1 className="mb-5 text-2xl leading-tight text-center md:text-left
                     md:text-4xl md:mb-10
                     ">

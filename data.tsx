@@ -151,44 +151,44 @@ export const dataPortfolio = [
 export const dataTestimonials = [
     {
         id: 1,
-        name: "George Snow",
+        name: "María Valentina Rojas | CTO",
         description:
-            "¡Increíble plataforma! Los testimonios aquí son genuinos y me han ayudado a tomar decisiones informadas. ¡Altamente recomendado!",
+            "Tairon lideró el backend de nuestro Sistema de Optimización de Rutas con Neo4j. Pasamos de planificar en horas a minutos, reduciendo un 23% los costos logísticos. Su enfoque en modelado de grafos y APIs REST fue clave.",
         imageUrl: "/profile1.png",
     },
     {
         id: 2,
-        name: "Juan Pérez",
+        name: "Jorge Álvarez | Product Manager",
         description:
-            "Me encanta la variedad de testimonios disponibles en esta página. Es inspirador ver cómo otras personas han superado desafíos similares a los míos. ¡Gracias por esta invaluable fuente de motivación!",
+            "En el proyecto Business Assistant Bot, Tairon tradujo necesidades de negocio en entregables funcionales. Automatizamos respuestas y flujos internos, bajando tiempos de atención en 40%. Comunicación clara y entregas puntuales.",
         imageUrl: "/profile2.png",
     },
     {
         id: 3,
-        name: "María García",
+        name: "Ana Sofía Mendoza | Data Scientist",
         description:
-            "Excelente recurso para obtener opiniones auténticas sobre diferentes productos y servicios. Me ha ayudado mucho en mis compras en línea. ¡Bravo por este sitio!",
+            "Colaboramos en el Music Recommender. Tairon montó APIs limpias y escalables, y preparó pipelines que facilitaron experimentar con modelos de recomendación. Excelente criterio para performance y DX.",
         imageUrl: "/profile3.png",
     },
     {
         id: 4,
-        name: "Laura Snow",
+        name: "Luis Fernando Paredes | Arquitecto de Software",
         description:
-            "¡Qué descubrimiento tan fantástico! Los testimonios aquí son honestos y detallados. Me siento más seguro al tomar decisiones después de leer las experiencias compartidas por otros usuarios.",
+            "En Build IT, Tairon diseñó servicios backend robustos y un frontend limpio con Next.js. Su cuidado por la UX y los detalles de seguridad marcó la diferencia. Código mantenible y bien documentado.",
         imageUrl: "/profile4.png",
     },
     {
         id: 5,
-        name: "Carlos Sánchez",
+        name: "Carolina Ortega | COO",
         description:
-            "Una joya en la web. Los testimonios son fáciles de encontrar y están bien organizados. ¡Definitivamente mi destino número uno cuando necesito referencias confiables!",
+            "Implementó nuestra API para análisis de zonas y centros de distribución. Estableció buenas prácticas (testing, CI, observabilidad) que agilizaron releases y evitaron regresiones. Muy recomendado.",
         imageUrl: "/profile5.png",
     },
     {
         id: 6,
-        name: "Antonio Martínez",
+        name: "Prof. Ricardo Hernández | Universidad",
         description:
-            "¡Fantástico recurso para aquellos que buscan validación antes de tomar decisiones importantes! Los testimonios aquí son veraces y realmente útiles. ¡Gracias por simplificar mi proceso de toma de decisiones!",
+            "Guié su trabajo de fin de curso. Destacó por su dominio de Node/TypeScript, patrones de diseño y bases de datos. Entregas consistentes, pruebas sólidas y excelente actitud.",
         imageUrl: "/profile6.png",
     },
 ];

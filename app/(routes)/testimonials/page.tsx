@@ -10,14 +10,14 @@ const TestimonialsPage = () => {
     return ( 
         <>
             <TransitionPage/>
-            <div className="flex flex-col justify-center h-lvh">
+            <div className="flex flex-col justify-center min-h-[70vh] px-4 md:px-0 pt-36 md:pt-40 pb-28 md:pb-10">
             <CircleImage/>
-            <h1 className="text-2xl leading-tight text-center md:text-4xl md:mb-5">
+            <h1 className="text-2xl leading-tight text-center md:text-4xl md:mb-5 mb-3">
                 Algunos comentarios 
                 <span className="text-secondary font-bold block"> de nuestros clientes</span>
             </h1>
-            <div className="flex items-center justify-center ">
-                <div>
+            <div className="flex items-center justify-center">
+                <div className="w-full max-w-[640px]">
                     <Swiper 
                     breakpoints={{
                         320:{
@@ -29,12 +29,14 @@ const TestimonialsPage = () => {
                         clickable:true
                     }}
                     modules={[Pagination]}
-                    className="h-[380px] md:h-[300px] w-[270px] md:w-[550px]">
+                    className="w-full">
                         {dataTestimonials.map(({id, name, description, imageUrl})=>(
                             <SwiperSlide key={id}>
-                                <Image src={imageUrl} alt={name} width={100} height={100} className="mx-auto rounded-full"/>
-                                <h4 className="text-center">{name}</h4>
-                                <p className="mt-5 text-center">{description}</p>
+                                <div className="px-2 md:px-8 py-8">
+                                  <Image src={imageUrl} alt={name} width={100} height={100} className="mx-auto rounded-full"/>
+                                  <h4 className="mt-3 text-center text-base md:text-lg font-semibold">{name}</h4>
+                                  <p className="mt-3 text-center text-sm md:text-base leading-relaxed md:leading-7">{description}</p>
+                                </div>
                             </SwiperSlide>
                         ))}
                     </Swiper>

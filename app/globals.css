@@ -9,8 +9,8 @@ background: #1f1934 ;
 
 main{
   background: #393a47;
-  height: 100vh;
-  height: 100dvb;
+  min-height: 100vh;
+  min-height: 100dvb;
 }
 
 .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
