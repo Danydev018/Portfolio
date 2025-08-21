@@ -30,7 +30,7 @@ const Introduction = () => {
                     Backend y Fullstack. He trabajado en proyectos propios de IA generativa, bots inteligentes y plataformas web
                     que integran autenticación, análisis de datos y servicios en la nube. 
                     </p>
-                    <div className="flex item-center justify-center gap-3 md:justify-start md:gap-10">
+                    <div className="flex items-center justify-center gap-3 md:justify-start md:gap-10">
                         <Link 
                         href="/portfolio" 
                         className="px-3 py-2 transition-all border-2 cursor-pointer 
@@ -38,7 +38,7 @@ const Introduction = () => {
                             Ver proyectos
                         </Link>
                         <Link 
-                        href="/about-me" 
+                        href="/contact" 
                         className="px-3 py-2 transition-all border-2 cursor-pointer 
                         text-md text-secondary border-secondary w-fit rounded-xl hover:shadow-xl hover:shadow-white/50">
                             Contacta conmigo
