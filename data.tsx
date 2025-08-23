@@ -123,6 +123,31 @@ export const dataPortfolio = [
         title: "Neo4J - Delivery",
         image: "/neo4j.jpg",
         urlGithub: "https://github.com/Danydev018/neo4j-delivery",
+        description: `
+            Arquitectura principal: Sistema de delivery basado en una base de datos orientada a grafos usando Neo4j.
+
+    - Backend inteligente:
+
+        Modela relaciones complejas entre clientes, repartidores, pedidos y rutas.
+
+        Utiliza el algoritmo de Dijkstra para calcular rutas óptimas.
+
+        Ejecuta consultas Cypher eficientes y actualiza la red logística en tiempo real.
+
+    - Frontend interactivo:
+
+        Desarrollado con React y Bootstrap.
+
+        Ofrece una interfaz intuitiva y adaptable para administradores y clientes.
+
+    - Funciones adicionales destacadas:
+
+        Integración con APIs de geolocalización.
+
+        Simulación de incidentes en rutas.
+
+        Análisis de conectividad para optimizar la red de entregas.
+        `,
         
     },
     {
@@ -130,6 +155,35 @@ export const dataPortfolio = [
         title: "Business Assistant Bot",
         image: "/bab1.jpg",
         urlGithub: "https://github.com/Danydev018/Bussines_Assistant_Bot",
+        description: `
+        Plataforma: Sistema automatizado de atención al cliente sobre Telegram, con arquitectura de doble bot.
+
+Estructura técnica:
+
+    User Bot: Interactúa directamente con los clientes, gestionando mensajes y respuestas automáticas.
+
+    Panel Bot: Administra conversaciones, permite seguimiento y control por parte del operador.
+
+    Comunicación asíncrona entre ambos mediante una base de datos SQLite compartida.
+
+Funciones clave:
+
+    🧠 Sistema de Cola Inteligente: Asigna turnos secuenciales y permite a los usuarios consultar su posición en tiempo real.
+
+    🗂️ Categorización Automática: Clasifica mensajes por temas (trabajo, familia, amigos, otros) usando palabras clave.
+
+    🔄 Gestión de Estados: Control detallado del flujo conversacional (pendiente, atendido, seguimiento, archivado, pospuesto).
+
+    🌴 Modo Vacaciones: Pausa notificaciones y envía respuestas automáticas durante ausencias del administrador.
+
+    📇 Recomendación de Contactos: Envía datos de contacto sugeridos de forma automatizada.
+
+    📢 Mensajería Masiva: Permite enviar comunicados a todos los clientes con estado pendiente.
+
+    ⏳ Sistema de Posposición: Oculta temporalmente conversaciones sin alterar su posición en la cola.
+
+    🔔 Notificaciones Automáticas: Informa a los primeros usuarios sobre su turno y tiempo estimado de espera.
+        `,
         
     },
     {
@@ -137,14 +191,82 @@ export const dataPortfolio = [
         title: "Music Recommender",
         image: "/ritmo-puro.jpg",
         urlGithub: "https://github.com/Danydev018/BDII_Prueba",
-        
+        description: `
+        Propósito: Demostrar cómo tecnologías NoSQL, específicamente Cassandra, pueden soportar sistemas de recomendación simples sin recurrir a machine learning avanzado.
+
+        Contexto: Inspirado en plataformas como Spotify y Deezer, que personalizan contenido según comportamiento del usuario (géneros, escuchas, ubicación).
+
+        Arquitectura técnica:
+
+            Base de datos Cassandra para manejo distribuido de datos y alto rendimiento en escrituras.
+
+            Análisis OLAP simplificado para consultas agregadas como “canciones más populares por género y mes”.
+
+            Modelo de datos escalable y flexible, ideal para registros frecuentes y no estructurados.
+
+        Características clave:
+
+            📊 Popularidad por género: Recomendaciones basadas en las canciones más escuchadas por categoría musical.
+
+            🌍 Recomendación geográfica: Sugerencias según la ciudad del usuario.
+
+            ⚙️ Consultas con CQL: Lenguaje similar a SQL, optimizado para entornos distribuidos.
+
+            🧱 Modelo particionado: Evita cuellos de botella al distribuir eficientemente los datos.
+
+        Ventajas destacadas:
+
+            ✅ Simplicidad: No requiere filtrado colaborativo ni modelos predictivos complejos.
+
+            💸 Eficiencia: Bajo costo computacional gracias a consultas directas y estructura ligera.
+        `,
     },
     {
         id: 4,
-        title: "Build IT",
+        title: "Buscaminas Sockets",
         image: "/build-it2.jpg",
-        urlGithub: "https://github.com/Danydev018/House_Estructure_Generator",
-        
+        urlGithub: "https://github.com/Danydev018/buscadminas",
+        description: `
+        Buscaminas con modos de un jugador y multijugador, optimizado para funcionar en Termux sobre Android, sin interfaz gráfica tradicional.
+
+        Arquitectura flexible: Binario unificado que puede actuar como cliente, servidor o juego local, según la selección del usuario.
+
+    🔌 Gestión de Sockets y Conexiones
+
+        Arquitectura de red dual:
+
+            Socket UDP (puerto 30000): Utilizado para descubrimiento automático de servidores en red local mediante broadcasting.
+
+            Socket TCP (puerto 40000): Establece conexiones confiables para la comunicación en tiempo real durante el juego multijugador.
+
+        Protocolos estructurados:
+
+            Mensajes de descubrimiento con validación por número mágico.
+
+            Estructuras de movimiento con verificación de coordenadas.
+
+            Sincronización inicial del juego mediante semillas compartidas.
+
+        Manejo robusto de buffers:
+
+            Envío y recepción segura con control de transmisiones parciales y timeouts.
+
+            Validación exhaustiva de datos recibidos para prevenir buffer overflows y corrupción de memoria.
+
+        Sincronización entre hilos:
+
+            Uso de variables atómicas para evitar condiciones de carrera.
+
+            Validación estricta de movimientos y alternancia de turnos para mantener la integridad del estado compartido.
+
+    🛠️ Ventajas técnicas:
+
+        Alta portabilidad en entornos móviles.
+
+        Comunicación eficiente y segura en redes locales.
+
+        Arquitectura modular y adaptable para distintos roles de ejecución.
+        `,
     }
 ];
 

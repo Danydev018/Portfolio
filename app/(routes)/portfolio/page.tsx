@@ -19,7 +19,7 @@ const PortfolioPage = () => {
                     Mis ultimos
                     <span className="text-secondary font-bold"> trabajos realizados</span> 
                 </h1>
-                <div className="relative z-10 grid max-w-5xl gap-6 mx-auto mt-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+                <div className="relative z-10 grid max-w-5xl gap-6 mx-auto mt-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 items-start">
                     {dataPortfolio.map((data)=>(
                         <PortfolioBox key={data.id} data={data}/>
                     ))}
