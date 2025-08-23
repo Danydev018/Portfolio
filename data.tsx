@@ -151,21 +151,21 @@ export const dataPortfolio = [
 export const dataTestimonials = [
     {
         id: 1,
-        name: "María Valentina Rojas | CTO",
+        name: "Mario Valentin Rojas | CTO",
         description:
-            "Tairon lideró el backend de nuestro Sistema de Optimización de Rutas con Neo4j. Pasamos de planificar en horas a minutos, reduciendo un 23% los costos logísticos. Su enfoque en modelado de grafos y APIs REST fue clave.",
+            "Tairon lideró el backend de nuestro Sistema de Optimización de Rutas con Neo4j. Su enfoque en modelado de grafos y APIs REST fue clave.",
         imageUrl: "/profile1.png",
     },
     {
         id: 2,
-        name: "Jorge Álvarez | Product Manager",
+        name: "Georgina Álvarez | Product Manager",
         description:
             "En el proyecto Business Assistant Bot, Tairon tradujo necesidades de negocio en entregables funcionales. Automatizamos respuestas y flujos internos, bajando tiempos de atención en 40%. Comunicación clara y entregas puntuales.",
         imageUrl: "/profile2.png",
     },
     {
         id: 3,
-        name: "Ana Sofía Mendoza | Data Scientist",
+        name: "Javier Mendoza | Data Scientist",
         description:
             "Colaboramos en el Music Recommender. Tairon montó APIs limpias y escalables, y preparó pipelines que facilitaron experimentar con modelos de recomendación. Excelente criterio para performance y DX.",
         imageUrl: "/profile3.png",

@@ -5,7 +5,7 @@ import { TypeAnimation } from "react-type-animation";
 
 const Introduction = () => {
     return ( 
-        <div className="z-20 w-full bg-darkBg/60">
+        <div className="z-20 w-full bg-darkBg/60 ">
             <div className="z-20 grid items-center h-full p-4 md:p-6 py-16 md:py-8 md:grid-cols-2 gap-6">
                 <Image src="/home-4.png" priority width={600} height={600} alt="profile-picture"
                     className="order-2 md:order-1 w-56 h-56 md:w-[480px] md:h-[480px] mx-auto object-contain"/> 

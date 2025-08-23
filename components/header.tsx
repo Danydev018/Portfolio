@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Header = () => {
     return ( 
-        <MotionTransition position="bottom" className="absolute z-40 inline-block w-full top-5 md:top-10 px-4 md:px-20">
+        <MotionTransition position="bottom" className="absolute z-40 inline-block w-full md:top-10 top-0 px-4 md:px-20">
             <header>
                 <div className="container justify-between max-w-6xl mx-auto md:flex ">
                     <Link href="/">
